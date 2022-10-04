@@ -12,4 +12,3 @@ This documentation intends to describe xAPI learning profile defined by the Gaia
 | Github user  | Name            | Company/Institution         |
 |----------------|-----------------|-----------------------------|
 | [@quitterie-lcs](https://github.com/quitterie-lcs) | Quitterie Lucas | [France Université Numérique](https://www.france-universite-numerique.fr/en/) |
-| [@jmaupetit](https://github.com/jmaupetit) | Julien Maupetit | [France Université Numérique](https://www.france-universite-numerique.fr/en/) |
