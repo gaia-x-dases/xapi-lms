@@ -1,3 +1,12 @@
+# Accessed a file
+
+## Description
+
+This event is emitted when a user has accessed a file such as a pdf, doc, txt, ppt, xls, csv, etc.
+
+## Example
+
+```json
 {
    "actor": {
       "objectType": "Agent",
@@ -23,4 +32,4 @@
       }
    }
 }
-
+```

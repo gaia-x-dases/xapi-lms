@@ -1,3 +1,12 @@
+# Accessed a page
+
+## Description
+
+The actor has accessed a page of a LMS or a website.
+
+## Example
+
+```json
 {
    "actor": {
       "objectType": "Agent",
@@ -57,4 +66,4 @@
       }
    }
 }
-
+```
