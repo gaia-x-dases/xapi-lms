@@ -1,0 +1,218 @@
+{
+    "id": "http://schema.dases.eu/xapi/profile/common",
+    "@context": "https://w3id.org/xapi/profiles/context",
+    "type": "Profile",
+    "conformsTo": "https://w3id.org/xapi/profiles#1.0",
+    "prefLabel": {
+        "en": "DASES Common Profile"
+    },
+    "definition": {
+        "en": "Common profile of typical activities occurring in a LMS or educational app."
+    },
+    "seeAlso": "",
+    "versions": [
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "generatedAtTime": "2022-04-14T18:58:48.297Z"
+        }
+    ],
+    "author": {
+        "type": "Organization",
+        "name": "Gaia-X Data Space for Education and Skills (DASES)",
+        "url": "https://www.dases.eu"
+    },
+    "concepts": [
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/extension/starting-date",
+            "type": "ContextExtension",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "starting date"
+            },
+            "definition": {
+                "en": "This is the starting date of the activity, formatted according to the normal format of ISO 8601."
+            },
+            "inlineSchema": "{\"type\":\"string\"}\n"
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/extension/ending-date",
+            "type": "ContextExtension",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "ending date"
+            },
+            "definition": {
+                "en": "This is the ending date of the activity, formatted according to the normal format of ISO 8601.\n"
+            },
+            "inlineSchema": "{\"type\": \"string\"}"
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/extension/role",
+            "type": "ContextExtension",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "role"
+            },
+            "definition": {
+                "en": "This is the role of the actor. For example (but not limited to): admin, manager, teacher, guest, learner or staff."
+            },
+            "inlineSchema": "{\"type\": \"string\"}"
+        }
+    ],
+    "templates": [
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/accessed-page",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "Accessed a page"
+            },
+            "definition": {
+                "en": "The actor has accessed a page of a LMS or a website."
+            },
+            "verb": "https://w3id.org/xapi/netc/verbs/accessed",
+            "objectActivityType": "https://w3id.org/xapi/acrossx/activities/webpage",
+            "rules": [
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://profiles.adlnet.gov/xapi/bf76a8cc-f46a-4065-aa7b-443df4efc2be/v/1"
+                    ]
+                },
+                {
+                    "location": "$.object.definition.extensions['https://w3id.org/xapi/acrossx/extensions/type']",
+                    "presence": "recommended",
+                    "any": [
+                        "course",
+                        "course_list",
+                        "user_space"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/accessed-file",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "Accessed a file"
+            },
+            "definition": {
+                "en": "The actor has accessed a file such as a pdf, doc, txt, ppt, xls, csv, etc."
+            },
+            "verb": "https://w3id.org/xapi/netc/verbs/accessed",
+            "objectActivityType": "http://activitystrea.ms/file",
+            "rules": [
+                {
+                    "location": "$.context.contextActivities.category.id",
+                    "presence": "included",
+                    "any": [
+                        "https://profiles.adlnet.gov/xapi/bf76a8cc-f46a-4065-aa7b-443df4efc2be/v/1"
+                    ]
+                },
+                {
+                    "location": "$.object.definition.extensions['https://w3id.org/xapi/acrossx/extensions/type']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/registered-course",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "Registered to a course"
+            },
+            "definition": {
+                "en": "The actor is registered to a course."
+            },
+            "verb": "https://w3id.org/xapi/tla/verbs/registered",
+            "objectActivityType": "http://adlnet.gov/expapi/activities/course",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/common/extension/starting-date']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/common/extension/ending-date']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/common/extension/role']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/uploaded-file",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "Uploaded a file"
+            },
+            "definition": {
+                "en": "The actor has uploaded file, such as pdf, doc, txt, ppt, xls, csv, jpg, png, etc... (+ video and audio file?)"
+            },
+            "verb": "https://w3id.org/xapi/netc/verbs/uploaded",
+            "objectActivityType": "http://activitystrea.ms/file",
+            "rules": [
+                {
+                    "location": "$.object.definition.extensions['https://w3id.org/xapi/acrossx/extensions/type']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.contextActivities.parent[*].id",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.context.contextActivities.grouping[*].id",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/netc/extensions/user-agent']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/answered-question",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "Answered a question"
+            },
+            "definition": {
+                "en": "The user answered a question in a quizz or an assessment"
+            },
+            "verb": "http://adlnet.gov/expapi/verbs/answered",
+            "objectActivityType": "http://adlnet.gov/expapi/activities/question",
+            "rules": [
+                {
+                    "location": "$.result.success",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.result.response",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.result.score.scaled",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.result.score.raw",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.result.score.min",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.result.score.max",
+                    "presence": "recommended"
+                }
+            ]
+        }
+    ]
+}
