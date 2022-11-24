@@ -141,9 +141,43 @@
                 {
                     "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/common/extension/role']",
                     "presence": "recommended"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/unregistered-course",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "Unregistered to a course"
+            },
+            "definition": {
+                "en": "The actor is unregistered to a course."
+            },
+            "verb": "http://id.tincanapi.com/verb/unregistered",
+            "objectActivityType": "http://adlnet.gov/expapi/activities/course",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/common/extension/starting-date']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/common/extension/ending-date']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/common/extension/role']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
                 }
             ]
         }
     ]
 }
-
