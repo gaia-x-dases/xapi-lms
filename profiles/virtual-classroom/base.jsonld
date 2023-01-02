@@ -1,0 +1,448 @@
+{
+    "id": "http://schema.dases.eu/xapi/profile/virtual-classroom",
+    "@context": "https://w3id.org/xapi/profiles/context",
+    "type": "Profile",
+    "conformsTo": "https://w3id.org/xapi/profiles#1.0",
+    "prefLabel": {
+        "en": "Virtual classroom"
+    },
+    "definition": {
+        "en": "Profile for usual activities in a virtual classroom or a webinar"
+    },
+    "seeAlso": "",
+    "versions": [
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "generatedAtTime": "2022-11-08T21:11:39.424Z"
+        }
+    ],
+    "author": {
+        "type": "Organization",
+        "name": "Gaia-X Data Space for Education and Skills (DASES)",
+        "url": "https://www.dases.eu"
+    },
+    "concepts": [
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/muted",
+            "type": "Verb",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "muted"
+            },
+            "definition": {
+                "en": "A user is muted within a virtual classroom, a conference or a webinar."
+            }
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/unmuted",
+            "type": "Verb",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "unmuted"
+            },
+            "definition": {
+                "en": "A user is unmuted within a virtual classroom, conference, webinar"
+            }
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/started-camera",
+            "type": "Verb",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "started camera"
+            },
+            "definition": {
+                "en": "A camera has been started."
+            }
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/stopped-camera",
+            "type": "Verb",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "stopped camera"
+            },
+            "definition": {
+                "en": "A camera has been stopped."
+            }
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/shared-screen",
+            "type": "Verb",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "shared screen"
+            },
+            "definition": {
+                "en": "A user has shared the screen."
+            }
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/unshared-screen",
+            "type": "Verb",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "unshared screen"
+            },
+            "definition": {
+                "en": "A user has stopped sharing the screen."
+            }
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/raised-hand",
+            "type": "Verb",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "raised hand"
+            },
+            "definition": {
+                "en": "A user has raised the hand in the virtual classroom."
+            }
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/lowered-hand",
+            "type": "Verb",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "lowered hand"
+            },
+            "definition": {
+                "en": "A user has lowered the hand in the virtual classroom."
+            }
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/extension/micro-activated",
+            "type": "ContextExtension",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "micro activated"
+            },
+            "definition": {
+                "en": "A participant in a webinar is unmuted."
+            },
+            "inlineSchema": "{\"type\":\"boolean\"}"
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/extension/camera-activated",
+            "type": "ContextExtension",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "camera activated"
+            },
+            "definition": {
+                "en": "A participant in a webinar has the camera activated."
+            },
+            "inlineSchema": "{\"type\":\"boolean\"}"
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/extension/response-type",
+            "type": "ContextExtension",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "response type"
+            },
+            "definition": {
+                "en": "The type of an answer to a question in an assessment, survey, poll. Can be \"true/false\", \"multiple choice\", \"single choice\", \"textbox\"..."
+            },
+            "inlineSchema": "{\"type\":\"string\"}"
+        }
+    ],
+    "templates": [
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/initialized",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "initialized"
+            },
+            "definition": {
+                "en": "The virtual classroom session has started.\nThe session is initialized when the first participant or an administrator session has entered the virtual classroom."
+            },
+            "verb": "http://adlnet.gov/expapi/verbs/initialized",
+            "objectActivityType": "http://id.tincanapi.com/activitytype/webinar",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://id.tincanapi.com/extension/planned-duration']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/video/extensions/user-agent']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/terminated",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "terminated"
+            },
+            "definition": {
+                "en": "The virtual classroom session has terminated.\nThe session ends when the last participant has left the classroom or when an administrator has ended the session."
+            },
+            "verb": "http://adlnet.gov/expapi/verbs/terminated",
+            "objectActivityType": "http://id.tincanapi.com/activitytype/webinar",
+            "rules": [
+                {
+                    "location": "$.result.duration",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/joined",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "joined"
+            },
+            "definition": {
+                "en": "A participant has joined the virtual classroom session."
+            },
+            "verb": "http://activitystrea.ms/join",
+            "objectActivityType": "http://id.tincanapi.com/activitytype/webinar",
+            "rules": [
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/video/extensions/user-agent']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/micro-activated']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/camera-activated']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/left",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "left"
+            },
+            "definition": {
+                "en": "A participant has left the virtual classroom session."
+            },
+            "verb": "http://activitystrea.ms/leave",
+            "objectActivityType": "http://id.tincanapi.com/activitytype/webinar"
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/muted",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "muted"
+            },
+            "definition": {
+                "en": "A participant has been muted. The action has been done by the participant itself or by another participant with moderation rights on the virtual classroom microphones."
+            },
+            "verb": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/muted",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/camera-activated']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/unmuted",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "unmuted"
+            },
+            "definition": {
+                "en": "A user has been unmuted. The action has been done by the participant itself or by another participant with moderation rights on the virtual classroom microphones.\n"
+            },
+            "verb": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/unmuted",
+            "rules": [
+                {
+                    "location": "$.context.extensions['https://w3id.org/xapi/video/extensions/volume']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/camera-activated']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/started-camera",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "started camera"
+            },
+            "definition": {
+                "en": "A user has started the camera. The action has been done by the participant itself or by another participant with moderation rights on the virtual classroom cameras. "
+            },
+            "verb": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/started-camera",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/micro-activated']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/stopped-camera",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "stopped camera"
+            },
+            "definition": {
+                "en": "A user has stopped the camera. The action has been done by the participant itself or by another participant with moderation rights on the virtual classroom microphones. "
+            },
+            "verb": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/stopped-camera",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/micro-activated']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/shared-screen",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "shared screen"
+            },
+            "definition": {
+                "en": "A participant has shared the screen."
+            },
+            "verb": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/shared-screen"
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/unshared-screen",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "unshared screen"
+            },
+            "definition": {
+                "en": "A user has unshared the screen."
+            },
+            "verb": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/unshared-screen"
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/raised-hand",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "raised hand"
+            },
+            "definition": {
+                "en": "A user has raised the hand to take part in the discussion in the virtual classroom."
+            },
+            "verb": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/raised-hand",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/micro-activated']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/camera-activated']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/lowered-hand",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "lowered hand"
+            },
+            "definition": {
+                "en": "A user has lowered the hand in the discussion."
+            },
+            "verb": "http://schema.dases.eu/xapi/profile/virtual-classroom/verb/lowered-hand"
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/created-poll",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "created poll"
+            },
+            "definition": {
+                "en": "A poll has been created in the virtual classroom in order to collect participants opinions about a given question."
+            },
+            "verb": "http://activitystrea.ms/create",
+            "objectActivityType": "http://activitystrea.ms/question",
+            "rules": [
+                {
+                    "location": "$.result.extensions['http://schema.dases.eu/xapi/profile/virtual-classroom/extension/response-type']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/answered-poll",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "answered poll"
+            },
+            "definition": {
+                "en": "A participant has answered a poll."
+            },
+            "verb": "http://adlnet.gov/expapi/verbs/answered",
+            "objectActivityType": "http://activitystrea.ms/question",
+            "rules": [
+                {
+                    "location": "$.result.response",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/posted-public-message",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "posted public message"
+            },
+            "definition": {
+                "en": "A participant has posted a public message in a chat."
+            },
+            "verb": "https://w3id.org/xapi/acrossx/verbs/posted",
+            "objectActivityType": "https://w3id.org/xapi/acrossx/activities/message",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://id.tincanapi.com/activitytype/chat-channel']",
+                    "presence": "recommended"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/virtual-classroom/templates/posted-private-message",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/virtual-classroom/v/1",
+            "prefLabel": {
+                "en": "posted private message"
+            },
+            "definition": {
+                "en": "A participant has sent a private message to another participant within the chat."
+            },
+            "verb": "https://w3id.org/xapi/acrossx/verbs/posted",
+            "objectActivityType": "https://w3id.org/xapi/acrossx/activities/message",
+            "rules": [
+                {
+                    "location": "$.context.extensions['http://id.tincanapi.com/activitytype/chat-channel']",
+                    "presence": "recommended"
+                },
+                {
+                    "location": "$.context.extensions['http://id.tincanapi.com/extension/private-area']",
+                    "presence": "included"
+                }
+            ]
+        }
+    ]
+}
