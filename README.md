@@ -1,8 +1,8 @@
-# xAPI common profile for Open Education
+# xAPI LMS profile for Open Education
 
-This documentation intends to describe a xAPI common learning profile defined by the Gaia-X organisation.
+This documentation intends to describe LMS profile defined by the Gaia-X organisation.
 
-## Common learning profile
+## Statements
 
 - [Accessed a page](./statements/accessed_page.md)
 - [Accessed a file](./statements/accessed_file.md)
