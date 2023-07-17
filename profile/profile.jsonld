@@ -178,6 +178,52 @@
                     "presence": "included"
                 }
             ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/uploaded-file",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "Uploaded a file"
+            },
+            "definition": {
+                "en": "The actor has uploaded a file such as a pdf, doc, txt, ppt, xls, csv, etc."
+            },
+            "verb": "https://w3id.org/xapi/netc/verbs/uploaded",
+            "objectActivityType": "http://activitystrea.ms/file",
+            "rules": [
+                {
+                    "location": "$.context.contextActivities.category",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                }
+            ]
+        },
+        {
+            "id": "http://schema.dases.eu/xapi/profile/common/templates/downloaded-file",
+            "type": "StatementTemplate",
+            "inScheme": "http://schema.dases.eu/xapi/profile/common/v/1",
+            "prefLabel": {
+                "en": "Downloaded a file"
+            },
+            "definition": {
+                "en": "The actor has downloaded a file such as a pdf, doc, txt, ppt, xls, csv, etc."
+            },
+            "verb": "http://id.tincanapi.com/verb/downloaded",
+            "objectActivityType": "http://activitystrea.ms/file",
+            "rules": [
+                {
+                    "location": "$.context.contextActivities.category",
+                    "presence": "included"
+                },
+                {
+                    "location": "$.timestamp",
+                    "presence": "included"
+                }
+            ]
         }
     ]
 }
