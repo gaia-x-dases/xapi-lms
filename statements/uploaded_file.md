@@ -2,7 +2,7 @@
 
 ## Description
 
-This event is emitted when a user has uploaded a file such as a pdf, doc, txt, ppt, xls, csv, etc.
+This event is emitted when a user has uploaded a file EXCEPTED video, audio or document files. For these types of file, the corresponding statements templates should be used ([uploaded a video](./uploaded_video.md), [uploaded an audio](./uploaded_audio.md) or [uploaded a document](./uploaded_document.md))
 
 ## Example
 
@@ -39,7 +39,10 @@ This event is emitted when a user has uploaded a file such as a pdf, doc, txt, p
                }
             }
          ]
-      }
+      }, 
+      "extensions": {
+         "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "53ff781a-3c52-11ee-be56-0242ac120002"
+      },
    },
    "timestamp": "2016-06-09T15:34:26.887Z"
 }
@@ -47,12 +50,14 @@ This event is emitted when a user has uploaded a file such as a pdf, doc, txt, p
 
 ## Determining properties
 
-| Property  | Value         |
-|----------------|-----------------|
-| verb.id | Must be `https://w3id.org/xapi/netc/verbs/uploaded` |
-| object.definition.type | Must be `http://activitystrea.ms/file` |
+| Property | Value |
+|---|---|
+| `$.verb.id` | MUST be `https://w3id.org/xapi/netc/verbs/uploaded` |
+| `$.object.definition.type` | MUST be `http://activitystrea.ms/file` |
 
 ## Rules
 
-- `context.contextActivities.category`: INCLUDED, MUST contain an activity with the `https://w3id.org/xapi/lms` id.
-- `timestamp`: INCLUDED.
+- `$.object.definition.extensions['https://w3id.org/xapi/acrossx/extensions/type']`: RECOMMENDED, MUST specify the type of the uploaded file. `video`, `document` and `audio` are excluded.
+- `$.context.contextActivities.category`: INCLUDED, MUST contain an activity with the `https://w3id.org/xapi/lms` id.
+- `$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']`: RECOMMENDED, UUID, MUST contain the ID of the active session where the file was downloaded.
+- `$.timestamp`: INCLUDED.
