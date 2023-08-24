@@ -26,22 +26,38 @@ The actor is registered to a course.
          }
       }
    },
+   "context": {
+      "contextActivities": {
+         "category": [
+            {
+               "id": "https://w3id.org/xapi/lms",
+               "definition": {
+                  "type": "http://adlnet.gov/expapi/activities/profile"
+               }
+            }
+         ]
+      },
+      "extensions": {
+         "https://w3id.org/xapi/lms/extensions/starting-date": "2016-09-01T09:00:00.000Z",
+         "https://w3id.org/xapi/lms/extensions/ending-date": "2016-12-01T00:00:00.000Z",
+         "https://w3id.org/xapi/lms/extensions/role": "learner" 
+      }
+   },
    "timestamp": "2016-06-09T15:34:26.887Z"
 }
 ```
 
-## Properties
+## Determining properties
 
-| Property | Presence | Value |
-|---|---|---|
-| object.definition.type | INCLUDED | Must be `http://adlnet.gov/expapi/activities/course` |
-| verb.id | INCLUDED | Must be `https://w3id.org/xapi/tla/verbs/registered` |
+| Property | Value |
+|---|---|
+| `$.verb.id` | MUST be `https://w3id.org/xapi/tla/verbs/registered` |
+| `$.object.definition.type` | MUST be `http://adlnet.gov/expapi/activities/course` |
 
 ## Rules
 
-| Rules | PRESENCE | Remarks |
-|---|---|---|
-| timestamp | INCLUDED | - |
-| context.extensions.http://schema.dases.eu/xapi/profile/common/extension/starting-date | RECOMMENDED | Can be specified when this date is known |
-| context.extensions.http://schema.dases.eu/xapi/profile/common/extension/ending-date | RECOMMENDED | Can be specified when this date is known |
-| context.extensions.http://schema.dases.eu/xapi/profile/common/extension/role | RECOMMENDED | - |
+- `$.context.contextActivities.category`: INCLUDED, MUST contain an activity with the `https://w3id.org/xapi/lms` id.
+- `$.context.extensions['https://w3id.org/xapi/lms/extensions/starting-date']`: RECOMMENDED, ISO 8601 datetime, can be specified when the date is known.
+- `$.context.extensions['https://w3id.org/xapi/lms/extensions/ending-date']`: RECOMMENDED, ISO 8601 datetime, can be specified when the date is known.
+- `$.context.extensions['https://w3id.org/xapi/lms/extensions/role']`: RECOMMENDED, str, assigned role of the user defined on the platform for the given course. For example: `admin`, `teacher`, `staff`, `learner`.
+- `$.timestamp`: INCLUDED.
