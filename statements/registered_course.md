@@ -15,7 +15,7 @@ The actor is registered to a course.
       }
    },
    "verb": {
-      "id": "https://w3id.org/xapi/tla/verbs/registered"
+      "id": "http://adlnet.gov/expapi/verbs/registered"
    },
    "object": {
       "id": "http://gaiax.org/xapi/activities/ba297687-b1aa-4477-9efd-a782c8fdb90a",
@@ -51,7 +51,7 @@ The actor is registered to a course.
 
 | Property | Value |
 |---|---|
-| `$.verb.id` | MUST be `https://w3id.org/xapi/tla/verbs/registered` |
+| `$.verb.id` | MUST be `http://adlnet.gov/expapi/verbs/registered` |
 | `$.object.definition.type` | MUST be `http://adlnet.gov/expapi/activities/course` |
 
 ## Rules
