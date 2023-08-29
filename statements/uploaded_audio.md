@@ -2,8 +2,9 @@
 
 ## Description
 
-This event is emitted when a user has uploaded a file of `audio` type.
-NB: this template is inspired from templates from [Audio Profile](https://profiles.adlnet.gov/profile/0925e2b8-0330-45d8-ab44-4abcaa5479f8).
+A user has uploaded a file of `audio` type to an LMS or an e-learning platform.
+
+> NB: As this template is related to `audio` Activity, it is inspired from templates of [Audio Profile](https://profiles.adlnet.gov/profile/0925e2b8-0330-45d8-ab44-4abcaa5479f8).
 
 ## Example
 

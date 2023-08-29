@@ -1,11 +1,15 @@
 # xAPI LMS profile for Open Education
 
-This documentation describes common activities performed on an LMS or e-learning application.
+This documentation describes LMS xAPI profile defined by the Gaia-X organisation.
+It intends to modelise common and generic action that can performed on an LMS or any e-learning application.
 
+> This profile is intended to be enriched iteratively by adding new descriptions of generic actions that would not be described in an already released xAPI profile.
+> Through the progressive addition of new templates, the profile can be restructured and categories of statement templates defined.
+ 
 ## Statements
 
-- [Registered a course](./statements/registered_course.md)
-- [Unregistered a course](./statements/unregistered_course.md)
+- [Registered to a course](./statements/registered_course.md)
+- [Unregistered to a course](./statements/unregistered_course.md)
 - [Uploaded a file](./statements/uploaded_file.md)
 - [Downloaded a file](./statements/downloaded_file.md)
 - [Uploaded a video](./statements/uploaded_video.md)

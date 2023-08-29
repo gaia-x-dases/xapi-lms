@@ -2,7 +2,7 @@
 
 ## Description
 
-This event is emitted when a user has accessed a file. 
+A user has accessed or navigated a file on a LMS or an e-learning platform.
 
 ## Example
 

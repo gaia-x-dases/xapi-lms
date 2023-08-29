@@ -2,8 +2,9 @@
 
 ## Description
 
-This event is emitted when a user has uploaded a file of `video` type.
-NB: this template is inspired from templates from [Video Profile](https://profiles.adlnet.gov/profile/90b2c849-d744-4d0c-8bd0-403e7859a35b).
+A user has uploaded a file of `audvideoio` type to an LMS or an e-learning platform.
+
+> NB: As this template is related to `video` Activity, it is inspired from templates of [Video Profile](https://profiles.adlnet.gov/profile/90b2c849-d744-4d0c-8bd0-403e7859a35b).
 
 ## Example
 

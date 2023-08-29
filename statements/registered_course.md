@@ -2,7 +2,7 @@
 
 ## Description
 
-The actor is registered to a course.
+A user is registered to a course, whether it is self-registration or cohort-registration (a course instructor has registered the user).
 
 ## Example
 
