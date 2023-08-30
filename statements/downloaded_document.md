@@ -2,7 +2,7 @@
 
 ## Description
 
-This event is emitted when a user has downloaded a file of `document` type.
+A user has downloaded a file of `document` type from an LMS or an e-learning platform.
 
 ## Example
 

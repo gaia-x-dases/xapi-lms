@@ -2,7 +2,8 @@
 
 ## Description
 
-This event is emitted when a user has uploaded a file EXCEPTED video, audio or document files. For these types of file, the corresponding statements templates should be used ([uploaded a video](./uploaded_video.md), [uploaded an audio](./uploaded_audio.md) or [uploaded a document](./uploaded_document.md))
+A user has uploaded a file to an LMS or an e-learning platform EXCEPTED `video`, `audio` or `document` files. 
+For these types of file, the corresponding statements templates should be used ([uploaded a video](./uploaded_video.md), [uploaded an audio](./uploaded_audio.md) or [uploaded a document](./uploaded_document.md))
 
 ## Example
 

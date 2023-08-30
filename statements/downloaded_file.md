@@ -2,7 +2,8 @@
 
 ## Description
 
-This event is emitted when a user has downloaded a file EXCEPTED video, audio or document files. For these types of file, the corresponding statements templates should be used ([downloaded a video](./downloaded_video.md), [downloaded an audio](./downloaded_audio.md) or [downloaded a document](./downloaded_document.md))
+A user has downloaded a file from an LMS or an e-learning platform EXCEPTED `video`, `audio` or `document` files. 
+For these types of file, the corresponding statements templates should be used ([downloaded a video](./downloaded_video.md), [downloaded an audio](./downloaded_audio.md) or [downloaded a document](./downloaded_document.md))
 
 ## Example
 

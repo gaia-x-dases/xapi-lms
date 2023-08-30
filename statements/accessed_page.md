@@ -2,7 +2,7 @@
 
 ## Description
 
-The actor has accessed a page of a LMS or a website.
+A user has accessed or navigated a page on a LMS or an e-learning platform.
 
 ## Example
 

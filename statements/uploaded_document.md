@@ -2,7 +2,7 @@
 
 ## Description
 
-This event is emitted when a user has uploaded a file of `document` type.
+A user has uploaded a file of `document` type to an LMS or an e-learning platform.
 
 ## Example
 
