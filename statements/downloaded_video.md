@@ -42,7 +42,7 @@ A user has downloaded a file of `video` type from an LMS or an e-learning platfo
       "extensions": {
          "https://w3id.org/xapi/video/extensions/length": 237.45,
          "https://w3id.org/xapi/video/extensions/quality": 144,
-         "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "53ff781a-3c52-11ee-be56-0242ac120002"
+         "https://w3id.org/xapi/video/extensions/session-id": "53ff781a-3c52-11ee-be56-0242ac120002"
       }
    },
    "timestamp": "2016-06-09T15:34:26.887Z"
@@ -61,5 +61,5 @@ A user has downloaded a file of `video` type from an LMS or an e-learning platfo
 - `$.context.contextActivities.category`: INCLUDED, MUST contain an activity with the `https://w3id.org/xapi/lms` id.
 - `$.context.extensions['https://w3id.org/xapi/video/extensions/length']`: RECOMMENDED, positive float with maximum 3 decimals, MUST contain the value of the actual length of the media in seconds.
 - `$.context.extensions['https://w3id.org/xapi/video/extensions/quality']`: RECOMMENDED, positive integer, MUST contain the value of the quality of the video file.
-- `$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']`: RECOMMENDED, UUID, MUST contain the ID of the active session where the video was downloaded.
+- `$.context.extensions['https://w3id.org/xapi/video/extensions/session-id']`: RECOMMENDED, UUID, MUST contain the ID of the active session where the video was downloaded.
 - `timestamp`: INCLUDED.

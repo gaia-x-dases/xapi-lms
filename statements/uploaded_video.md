@@ -40,7 +40,7 @@ A user has uploaded a file of `video` type to an LMS or an e-learning platform.
          ]
       }, 
       "extensions": {
-         "https://w3id.org/xapi/cmi5/context/extensions/sessionid": "53ff781a-3c52-11ee-be56-0242ac120002"
+         "https://w3id.org/xapi/video/extensions/session-id": "53ff781a-3c52-11ee-be56-0242ac120002"
       }
    },
    "timestamp": "2016-06-09T15:34:26.887Z"
@@ -57,5 +57,5 @@ A user has uploaded a file of `video` type to an LMS or an e-learning platform.
 ## Rules
 
 - `$.context.contextActivities.category`: INCLUDED, MUST contain an activity with the `https://w3id.org/xapi/lms` id.
-- `$.context.extensions['https://w3id.org/xapi/cmi5/context/extensions/sessionid']`: RECOMMENDED, UUID, MUST contain the ID of the active session where the video was downloaded.
+- `$.context.extensions['https://w3id.org/xapi/video/extensions/session-id']`: RECOMMENDED, UUID, MUST contain the ID of the active session where the video was downloaded.
 - `$.timestamp`: INCLUDED.
